@@ -1,5 +1,5 @@
-using System.Runtime.Intrinsics.Arm.Arm64;
 using Microsoft.EntityFrameworkCore;
+using vegan.Models;
 namespace vegan.Persistence
 {
     public class VeganDbContext : DbContext
@@ -9,5 +9,8 @@ namespace vegan.Persistence
         {
             
         }
+        //dont need to explicitely add the model here as "Make"
+        //uses Model references
+        public DbSet<Make> Makes { get; set; }
     }
 }
